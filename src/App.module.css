@@ -1,0 +1,22 @@
+.bottomImage, .topImage {
+  position:fixed;
+  width: 80px;
+  z-index: -5;
+}
+
+.bottomImage {  
+  left:0px;
+  bottom: 0px;   
+}
+
+.topImage {  
+  right: 0px;
+  top: 0px;  
+}
+
+@media (min-width: 769px) {
+  .bottomImage,
+  .topImage {
+    width: 200px;
+  }
+}
