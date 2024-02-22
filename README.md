@@ -1,4 +1,4 @@
-# Scrimba - Notes App project
+# Scrimba - Quizzical App project
 
 This is a project of the [Quizzical app on Scrimba](https://scrimba.com/learn/frontend). Scrimba helps you improve your coding skills by building realistic projects.
 
@@ -18,11 +18,11 @@ This is a project of the [Quizzical app on Scrimba](https://scrimba.com/learn/fr
 
 ### Requirements
 
-- Sync notes with Firebase
-- Add note summary titles
-- Move modified notes to the top of the list
-- Delete notes
-- Debouncing
+- Two screens (start & questions)
+- Pull 5 questions from the OTDB API
+- Tally correct answers after "Check answers" is clicked
+- Styled and polished
+  
 
 
 ### Screenshot
@@ -31,8 +31,8 @@ This is a project of the [Quizzical app on Scrimba](https://scrimba.com/learn/fr
 
 ### Links
 
-- Live Site URL: [@Netlify](https://notesappy.netlify.app/)
-- Solution URL: [@GitHub](https://github.com/Isaacvf-dev/Notes-app)
+- Live Site URL: [@Netlify](https://quizzik.netlify.app/)
+- Solution URL: [@GitHub](https://github.com/Isaacvf-dev/Quizzical-App)
 
 ### Getting Started with Create React App
 
@@ -45,8 +45,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - HTML
 - CSS 
 - React.JS
-- Firebase
-
+  
 
 
 
