@@ -35,11 +35,13 @@ main {
 }
 
 .buttonAnswer:disabled {
-  cursor: not-allowed;  
+  cursor: not-allowed;
+  opacity: 0.7;  
 }
 
 .buttonAnswer:disabled:hover {
-  background: transparent;
+  background: transparent;   
+  opacity: 0.7;
 }
 
 .buttonCheckAnswers {
@@ -69,7 +71,19 @@ main {
 .correctAnswer {
   background: var(--green-300);
 }
+
+.correctAnswer:disabled {
+  opacity: 1;
+}
+.correctAnswer:disabled:hover {
+  opacity: 1;
+  background: var(--green-300)
+}
+
 .wrongAnswer {
+  background: var(--red-100);
+}
+.wrongAnswer:disabled:hover {
   background: var(--red-100);
 }
 

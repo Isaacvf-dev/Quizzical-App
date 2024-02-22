@@ -10,6 +10,7 @@ export function Quizz({onPlayAgain }) {
   const [selectedAnswers, setSelectedAnswers] = React.useState([])  
   const [results, setResults] = React.useState({});
 
+  console.log(quizz)
  
   const fetchData = async () => {
     try {      
@@ -79,7 +80,10 @@ export function Quizz({onPlayAgain }) {
 
     quizz.forEach(item => {
       const isCorrect = selectedAnswers[item.id] === item.correct_answer;
-      updatedResults[item.id] = isCorrect;
+      updatedResults[item.id] = {
+        isCorrect: isCorrect,
+        isWrong: !isCorrect,
+      };
     });
 
     setResults(updatedResults);
@@ -97,9 +101,8 @@ export function Quizz({onPlayAgain }) {
     onPlayAgain();  
   }
 
-  console.log(results)
-  console.log(selectedAnswers)
-  console.log(quizz)
+  
+  
   return (
     <main>      
       {quizz.map(item => (
@@ -113,7 +116,8 @@ export function Quizz({onPlayAgain }) {
                   key={nanoid()} 
                   className={`${styles.buttonAnswer} 
                               ${selectedAnswers[item.id] === answer ? styles.selectedAnswer : ''}
-                              ${results[item.id] !== undefined && selectedAnswers[item.id] === answer ? (results[item.id] ? styles.correctAnswer : styles.wrongAnswer) : ''}
+                              ${results[item.id] !== undefined && selectedAnswers[item.id] === answer ? (results[item.id].isCorrect ? styles.correctAnswer : styles.wrongAnswer) : ''}
+                              ${results[item.id] !== undefined && answer === item.correct_answer ? styles.correctAnswer : ''}
                                                         
                               
                   `}
@@ -140,7 +144,7 @@ export function Quizz({onPlayAgain }) {
       {Object.keys(results).length > 0 && 
       <div className={styles.containerPlayAgain}>
         <span>
-          You scored {Object.values(results).filter(result => result).length}/{quizz.length} correct answers       
+          You scored {Object.values(results).filter(result => result.isCorrect).length}/{quizz.length} correct answers       
         </span>
         <button 
           className={styles.buttonTryAgain}
