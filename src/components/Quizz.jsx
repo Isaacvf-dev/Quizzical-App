@@ -10,8 +10,7 @@ export function Quizz({onPlayAgain }) {
   const [selectedAnswers, setSelectedAnswers] = React.useState([])  
   const [results, setResults] = React.useState({});
 
-  console.log(quizz)
- 
+   
   const fetchData = async () => {
     try {      
       const response = await fetch('https://opentdb.com/api.php?amount=5');
